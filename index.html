@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="jquery-3.2.1.js"></script>
+    <title>Coding Workshop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Portfolio">
+    <meta property="og:description" content="Built with Next Academy">
+    <meta property="og:site_name" content="My Portfolio">
+    <meta property="og:image" content="https://www.nextacademy.com/img/share/nextacademy-generic.jpg">
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="#about" class="nav-links">About Me </a>
+      <a href="#show" class="nav-links">What I've Done </a>
+    </div>
+    <div class="container">
+
+      <div class="small-container" id="about">
+        <h1>Hello, I'm Jia.</h1>
+        <p>This is my first website, and I'm interested in coding.</p>
+        <p>I'm from Penang and I love music.</p>
+      </div>
+
+      <div class="small-container" id="show">
+        <h1>What I've done in the past</h1>
+        <ol>
+          <li id="special">Learn to code</li>
+          <li>Some digital marketing</li>
+          <li>Travel</li>
+          <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg" width=100 height=80>
+        </ol>
+        <a href="https://www.nextacademy.com">
+          Learn to code from Next Academy
+        </a>
+      </div>
+
+      <div class="small-container">
+        <button id="surprise-button">Click me for a surprise!</button>
+        <div id="haha"></div>
+
+    </div>
+  </body>
+  <script>
+    $(document).ready(function() {
+      $("#surprise-button").click(function(e) {
+        $.get("http://api.giphy.com/v1/gifs/random?tag=obama&api_key=dc6zaTOxFJmzC", function(res) {
+          $('#haha').html('<img src="' + res.data.image_url + '">' )
+        })
+      })
+    })
+  </script>
+</html>
